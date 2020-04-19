@@ -1,0 +1,38 @@
+- name: Install packages (vim ; nano ; git ; screen ; gcc ; make ; wget ; ssh)
+  become: true
+  apt:
+    pkg:
+      - curl 
+      - vim
+      - nano
+      - git
+      - screen
+      - gcc
+      - make
+      - wget
+      - ssh
+      - snapd
+      - snapd-xdg-open
+      - software-properties-common
+
+- name: Copy Vim Run Command file (.vimrc)
+  template:
+    src: ../templates/vimrc
+    dest: /home/boris/.vimrc
+
+- name: Copy Screen Run Command file (.screenrc)
+  template:
+    src: ../templates/screenrc
+    dest: /home/boris/.screenrc
+
+- name: Installing JetBrains PhpStorm
+  become: true
+  snap:
+    name: phpstorm
+    classic: yes
+
+- name: Installing Microsoft Visual Studio Code
+  become: true
+  snap:
+    name: code
+    classic: yes

@@ -1,0 +1,14 @@
+- name: Installing NodeJS
+  become: true
+  snap:
+    name: node
+    classic: yes
+    channel: '{{ nodejs_lts }}'
+
+- name: Installing npm "n" package
+  become: true
+  npm:
+    name: n
+    global: yes
+  environment: 
+    PATH: "{{ ansible_env.PATH}}:/snap/bin"

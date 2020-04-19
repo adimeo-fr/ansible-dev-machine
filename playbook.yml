@@ -1,0 +1,13 @@
+- name: Install development machine
+  hosts: all
+
+  roles:
+    #- common
+    #- php
+    #- virtualbox
+    #- chrome
+    #- nodejs
+    #- docker
+    #- zsh
+    #- ssh
+    - teams

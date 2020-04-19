@@ -1,0 +1,28 @@
+- name: Installing ZSH
+  become: true
+  apt:
+    pkg: 
+      - zsh
+
+- name: Cloning oh-my-zsh
+  git:
+    repo=https://github.com/robbyrussell/oh-my-zsh
+    dest=~/.oh-my-zsh
+    
+- name: Adding zsh-autosuggestions
+  git:
+    repo=https://github.com/zsh-users/zsh-autosuggestions
+    dest=~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+      
+- name: Copy Zsh Run Command file (.zshrc)
+  template:
+    src: ../templates/zshrc
+    dest: '~/.zshrc'
+
+- name: Set default shell to ZSH
+  become: true
+  user:
+    name: '{{ ansible_user }}'
+    shell: /bin/zsh
+    append: yes
+  
