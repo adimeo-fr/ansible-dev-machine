@@ -18,12 +18,12 @@
 - name: Copy Vim Run Command file (.vimrc)
   template:
     src: ../templates/vimrc
-    dest: /home/boris/.vimrc
+    dest: /home/{{ ansible_user }}/.vimrc
 
 - name: Copy Screen Run Command file (.screenrc)
   template:
     src: ../templates/screenrc
-    dest: /home/boris/.screenrc
+    dest: /home/{{ ansible_user }}/.screenrc
 
 - name: Installing JetBrains PhpStorm
   become: true

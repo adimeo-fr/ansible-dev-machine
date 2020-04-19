@@ -26,3 +26,8 @@
     shell: /bin/zsh
     append: yes
   
+- name: Export ZSH variable
+  lineinfile:
+    path: ~/.zshrc
+    insertafter: '^Path to your oh-my-zsh installation '
+    line: 'export ZSH="/home/{{ ansible_user }}/.oh-my-zsh"'
