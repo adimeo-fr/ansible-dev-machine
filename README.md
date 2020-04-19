@@ -54,7 +54,7 @@ Tu peux exécuter les tâches :
 ```
 ansible-playbook \
   -i hosts playbook.yml \
-  --extra-vars "ansible_user=__USER__ ansible_password=__PASSWORD__ email_username=__EMAIL_USERNAME_ ansible_become_password=dqhgz51"
+  --extra-vars "ansible_user=__USER__ ansible_password=__PASSWORD__ email_username=__EMAIL_USERNAME_ ansible_become_password=__PASSWORD__"
 ```
 
 Pense à remplacer dans cette commande les valeurs suivantes :
