@@ -2,12 +2,12 @@
   hosts: all
 
   roles:
-    #- common
-    #- php
-    #- virtualbox
-    #- chrome
-    #- nodejs
-    #- docker
-    #- zsh
-    #- ssh
+    - common
+    - php
+    - virtualbox
+    - chrome
+    - nodejs
+    - docker
+    - zsh
+    - ssh
     - teams
