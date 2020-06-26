@@ -1,0 +1,6 @@
+- name: Installing MySQL Workbench
+  when: install_mysql_workbench | bool
+  become: true
+  apt:
+    pkg:
+      - mysql-workbench 

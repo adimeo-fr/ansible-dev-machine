@@ -7,10 +7,8 @@
       - ca-certificates
       - curl
       - software-properties-common
-      - python3-pip
       - virtualenv
-      - python3-setuptools
-
+    
 - name: Add Docker GPG apt Key
   when: install_docker | bool
   become: true

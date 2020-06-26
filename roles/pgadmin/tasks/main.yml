@@ -1,0 +1,22 @@
+- name: Add pgAdmin 4 GPG apt Key
+  when: install_pgadmin4 | bool
+  become: true
+  apt_key:
+    url: https://www.pgadmin.org/static/packages_pgadmin_org.pub
+    state: present
+
+- name: Add pgAdmin Repository
+  when: install_pgadmin4 | bool
+  become: true
+  apt_repository:
+    repo: 'deb https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/{{ lsb_release }} pgadmin4 main'
+    state: present
+
+- name: Update apt and install pgAdmin 4
+  when: install_pgadmin4 | bool
+  become: true
+  apt:
+    update_cache: yes
+    name: pgadmin4
+    state: latest
+  

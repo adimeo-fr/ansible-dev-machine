@@ -1,0 +1,6 @@
+- name: Installing Filezilla
+  when: install_filezilla | bool
+  become: true
+  apt:
+    pkg:
+      - filezilla

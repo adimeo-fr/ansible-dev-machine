@@ -14,3 +14,11 @@
     global: yes
   environment: 
     PATH: "{{ ansible_env.PATH}}:/snap/bin"
+
+- name: Download nvm installer
+  when: install_nodejs | bool
+  get_url: url=https://raw.githubusercontent.com/creationix/nvm/v0.31.3/install.sh dest=/tmp/nvm-installer.sh
+
+- name: Execute the nvm-installer.sh
+  when: install_nodejs | bool
+  shell: bash /tmp/nvm-installer.sh

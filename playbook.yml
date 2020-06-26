@@ -10,6 +10,15 @@
     - zsh
     - ssh
     - teams
+    - spotify
+    - mysql-workbench
+    - libreoffice
+    - filezilla
+    - pgadmin
+    - glimpse
+    - boostnote
+    - postman
+    - sublime-text
 
   vars_prompt:
     - name: "install_phpstorm"
@@ -70,5 +79,41 @@
       private: no
     - name: "install_teams"
       prompt: "Install Teams ? (yes/no)"
+      default: "no"
+      private: no
+    - name: "install_spotify"
+      prompt: "Install Spotify ? (yes/no)"
+      default: "no"
+      private: no
+    - name: "install_mysql_workbench"
+      prompt: "Install MySQL Workbench ? (yes/no)"
+      default: "no"
+      private: no
+    - name: "install_libreoffice"
+      prompt: "Install Libreoffice ? (yes/no)"
+      default: "no"
+      private: no
+    - name: "install_filezilla"
+      prompt: "Install Filezilla ? (yes/no)"
+      default: "no"
+      private: no
+    - name: "install_pgadmin4"
+      prompt: "Install pgAdmin 4 ? (yes/no)"
+      default: "no"
+      private: no
+    - name: "install_glimpse"
+      prompt: "Install Glimpse ? (yes/no)"
+      default: "no"
+      private: no
+    - name: "install_boostnote"
+      prompt: "Install Boostnote ? (yes/no)"
+      default: "no"
+      private: no
+    - name: "install_postman"
+      prompt: "Install Postman ? (yes/no)"
+      default: "no"
+      private: no
+    - name: "install_sublime_text"
+      prompt: "Install Sublime Text ? (yes/no)"
       default: "no"
       private: no

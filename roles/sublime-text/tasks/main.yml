@@ -1,0 +1,6 @@
+- name: Installing Sublime Text
+  when: install_sublime_text | bool
+  become: true
+  snap:
+    name: sublime-text
+    classic: yes

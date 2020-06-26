@@ -1,0 +1,5 @@
+- name: Install Boostnote
+  become: true
+  when: install_boostnote | bool
+  apt:
+    deb: '{{ boostnote_latest }}'

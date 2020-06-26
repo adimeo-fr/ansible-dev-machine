@@ -1,0 +1,6 @@
+- name: Installing Libreoffice
+  when: install_libreoffice | bool
+  become: true
+  snap:
+    name: libreoffice
+    classic: yes

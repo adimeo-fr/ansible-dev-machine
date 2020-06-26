@@ -1,0 +1,6 @@
+- name: Installing Glimpse
+  when: install_glimpse | bool
+  become: true
+  snap:
+    name: glimpse-editor
+    classic: yes

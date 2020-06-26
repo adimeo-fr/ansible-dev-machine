@@ -1,0 +1,6 @@
+- name: Installing Spotify
+  when: install_spotify | bool
+  become: true
+  snap:
+    name: spotify
+    classic: yes

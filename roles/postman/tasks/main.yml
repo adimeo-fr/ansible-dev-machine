@@ -1,0 +1,6 @@
+- name: Installing Postman
+  when: install_postman | bool
+  become: true
+  snap:
+    name: postman
+    classic: yes
