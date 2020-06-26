@@ -1,4 +1,5 @@
 - name: Installing NodeJS
+  when: install_nodejs | bool
   become: true
   snap:
     name: node
@@ -6,6 +7,7 @@
     channel: '{{ nodejs_lts }}'
 
 - name: Installing npm "n" package
+  when: install_nodejs | bool
   become: true
   npm:
     name: n

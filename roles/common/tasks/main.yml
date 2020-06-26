@@ -27,12 +27,14 @@
 
 - name: Installing JetBrains PhpStorm
   become: true
+  when: install_phpstorm | bool
   snap:
     name: phpstorm
     classic: yes
 
 - name: Installing Microsoft Visual Studio Code
   become: true
+  when: install_vscode | bool
   snap:
     name: code
     classic: yes

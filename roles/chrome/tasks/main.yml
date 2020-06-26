@@ -1,14 +1,19 @@
 - name: Gather the package facts
+  when: install_chrome | bool
   package_facts:
     manager: auto
 
 - name: Check whether google-chrome-stable is installed
   debug:
     msg: "{{ ansible_facts.packages['google-chrome-stable'] | length }} versions of google-chrome-stable are installed!"
-  when: "'google-chrome-stable' in ansible_facts.packages"
+  when:
+    - install_chrome | bool
+    - "'google-chrome-stable' in ansible_facts.packages"
 
 - name: Installing Google Chrome
   become: true
   apt:
     deb: https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-  when: "'google-chrome-stable' not in ansible_facts.packages"
+  when:
+    - install_chrome | bool
+    - "'google-chrome-stable' not in ansible_facts.packages"

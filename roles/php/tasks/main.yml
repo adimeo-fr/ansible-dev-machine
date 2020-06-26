@@ -4,16 +4,12 @@
     filename: php
   become: true
 
-- name: Install PHP (7.0, 7.1, 7.2, 7.3, 7.4 and some extensions)
+- name: Install PHP 7.0 and some extensions
   become: true
+  when: install_php70 | bool
   apt:
     pkg:
       - php7.0
-      - php7.1
-      - php7.2
-      - php7.3
-      - php7.4
-
       - php7.0-curl
       - php7.0-dom
       - php7.0-intl
@@ -26,6 +22,12 @@
       - php7.0-xml
       - php7.0-zip
 
+- name: Install PHP 7.1 and some extensions
+  become: true
+  when: install_php71 | bool
+  apt:
+    pkg:
+      - php7.1
       - php7.1-curl
       - php7.1-dom
       - php7.1-intl
@@ -38,6 +40,12 @@
       - php7.1-xml
       - php7.1-zip
 
+- name: Install PHP 7.2 and some extensions
+  become: true
+  when: install_php72 | bool
+  apt:
+    pkg:
+      - php7.2
       - php7.2-curl
       - php7.2-dom
       - php7.2-intl
@@ -50,6 +58,12 @@
       - php7.2-xml
       - php7.2-zip
 
+- name: Install PHP 7.3 and some extensions
+  become: true
+  when: install_php73 | bool
+  apt:
+    pkg:
+      - php7.3
       - php7.3-curl
       - php7.3-dom
       - php7.3-intl
@@ -62,6 +76,12 @@
       - php7.3-xml
       - php7.3-zip
 
+- name: Install PHP 7.4 and some extensions
+  become: true
+  when: install_php74 | bool
+  apt:
+    pkg:
+      - php7.4
       - php7.4-curl
       - php7.4-dom
       - php7.4-intl
@@ -80,9 +100,9 @@
 
 - name: Downloading Composer
   script: scripts/install-composer.sh
-  when: composer_install_check.stdout.find('composer') == -1
+  when: composer_install_check.stdout.find('composer') == -1 and install_composer | bool
 
 - name: Move Composer globally
   become: true
   command: mv composer.phar /usr/local/bin/composer
-  when: composer_install_check.stdout.find('composer') == -1
+  when: composer_install_check.stdout.find('composer') == -1 and install_composer | bool

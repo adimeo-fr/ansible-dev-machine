@@ -5,10 +5,14 @@
 - name: Check whether teams is installed
   debug:
     msg: "{{ ansible_facts.packages['teams'] | length }} versions of teams are installed!"
-  when: "'teams' in ansible_facts.packages"
+  when:
+    - "'teams' in ansible_facts.packages"
+    - install_teams | bool
 
 - name: Install Teams client
   become: true
   apt:
     deb: https://teams.microsoft.com/downloads/desktopurl?env=production&plat=linux&arch=x64&download=true&linuxArchiveType=deb
-  when: "'teams' not in ansible_facts.packages"
+  when:
+    - "'teams' not in ansible_facts.packages"
+    - install_teams | bool

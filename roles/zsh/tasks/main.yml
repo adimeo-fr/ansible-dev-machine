@@ -1,25 +1,30 @@
 - name: Installing ZSH
+  when: install_and_configure_zsh | bool
   become: true
   apt:
     pkg: 
       - zsh
 
 - name: Cloning oh-my-zsh
+  when: install_and_configure_zsh | bool
   git:
     repo=https://github.com/robbyrussell/oh-my-zsh
     dest=~/.oh-my-zsh
     
 - name: Adding zsh-autosuggestions
+  when: install_and_configure_zsh | bool
   git:
     repo=https://github.com/zsh-users/zsh-autosuggestions
     dest=~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
       
 - name: Copy Zsh Run Command file (.zshrc)
+  when: install_and_configure_zsh | bool
   template:
     src: ../templates/zshrc
     dest: '~/.zshrc'
 
 - name: Set default shell to ZSH
+  when: install_and_configure_zsh | bool
   become: true
   user:
     name: '{{ ansible_user }}'
@@ -27,6 +32,7 @@
     append: yes
   
 - name: Export ZSH variable
+  when: install_and_configure_zsh | bool
   lineinfile:
     path: ~/.zshrc
     insertafter: '^# Path to your oh-my-zsh installation.'

@@ -5,4 +5,6 @@
 
 - name: Generate an SSH keypair with the default values (4096 bits, rsa)
   command: ssh-keygen -t rsa -f ~/.ssh/{{ email_username }} -N "" -b 4096 -C {{ email_username }}@adimeo.com
-  when: keyfile.stat.exists == false
+  when:
+    - keyfile.stat.exists == false
+    - generate_ssh_key | bool

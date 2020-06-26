@@ -31,7 +31,7 @@ sudo apt install -y ansible ssh sshpass
 Enfin tape cette commande afin d'autoriser une connexion SSH à ta propre machine : 
 
 ```
-ssh-keyscan -H 127.0.0.1 >> ~/.ssh/known_hosts
+mkdir -p ~/.ssh && ssh-keyscan -H 127.0.0.1 >> ~/.ssh/known_hosts
 ```
 
 Ça y est ? Prêt à lancer la bête ?

@@ -1,4 +1,5 @@
 - name: Add VirtualBox apt key
+  when: install_vbox | bool
   apt_key:
     url: https://www.virtualbox.org/download/oracle_vbox_2016.asc
     state: present
@@ -9,8 +10,10 @@
     state: present
     filename: virtualbox
   become: true
+  when: install_vbox | bool
 
 - name: Installing Virtualbox
   become: true
+  when: install_vbox | bool
   apt:
     name: virtualbox-6.0
