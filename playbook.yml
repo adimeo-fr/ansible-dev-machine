@@ -19,101 +19,106 @@
     - boostnote
     - postman
     - sublime-text
+    - discord
 
   vars_prompt:
     - name: "install_phpstorm"
       prompt: "Install JetBrains PhpStorm ? (yes/no)"
-      default: "no"
+      default: "yes"
       private: no
     - name: "install_vscode"
       prompt: "Install Microsoft Visual Studio Code ? (yes/no)"
-      default: "no"
+      default: "yes"
       private: no
     - name: "install_php70"
       prompt: "Install php v7.0 ? (yes/no)"
-      default: "no"
+      default: "yes"
       private: no
     - name: "install_php71"
       prompt: "Install php v7.1 ? (yes/no)"
-      default: "no"
+      default: "yes"
       private: no
     - name: "install_php72"
       prompt: "Install php v7.2 ? (yes/no)"
-      default: "no"
+      default: "yes"
       private: no
     - name: "install_php73"
       prompt: "Install php v7.3 ? (yes/no)"
-      default: "no"
+      default: "yes"
       private: no
     - name: "install_php74"
       prompt: "Install php v7.4 ? (yes/no)"
-      default: "no"
+      default: "yes"
       private: no
     - name: "install_composer"
       prompt: "Install Composer ? (yes/no)"
-      default: "no"
+      default: "yes"
       private: no
     - name: "install_vbox"
       prompt: "Install VirtualBox ? (yes/no)"
-      default: "no"
+      default: "yes"
       private: no
     - name: "install_chrome"
       prompt: "Install Google Chrome ? (yes/no)"
-      default: "no"
+      default: "yes"
       private: no
     - name: "install_nodejs"
       prompt: "Install NodeJS ? (yes/no)"
-      default: "no"
+      default: "yes"
       private: no
     - name: "install_docker"
       prompt: "Install Docker ? (yes/no)"
-      default: "no"
+      default: "yes"
       private: no
     - name: "install_and_configure_zsh"
       prompt: "Install and configure ZSH ? (yes/no)"
-      default: "no"
+      default: "yes"
       private: no
     - name: "generate_ssh_key"
       prompt: "Generate an SSH keypair ? (yes/no)"
-      default: "no"
+      default: "yes"
       private: no
     - name: "install_teams"
       prompt: "Install Teams ? (yes/no)"
-      default: "no"
+      default: "yes"
       private: no
     - name: "install_spotify"
       prompt: "Install Spotify ? (yes/no)"
-      default: "no"
+      default: "yes"
       private: no
     - name: "install_mysql_workbench"
       prompt: "Install MySQL Workbench ? (yes/no)"
-      default: "no"
+      default: "yes"
       private: no
     - name: "install_libreoffice"
       prompt: "Install Libreoffice ? (yes/no)"
-      default: "no"
+      default: "yes"
       private: no
     - name: "install_filezilla"
       prompt: "Install Filezilla ? (yes/no)"
-      default: "no"
+      default: "yes"
       private: no
     - name: "install_pgadmin4"
       prompt: "Install pgAdmin 4 ? (yes/no)"
-      default: "no"
+      default: "yes"
       private: no
     - name: "install_glimpse"
       prompt: "Install Glimpse ? (yes/no)"
-      default: "no"
+      default: "yes"
       private: no
     - name: "install_boostnote"
       prompt: "Install Boostnote ? (yes/no)"
-      default: "no"
+      default: "yes"
       private: no
     - name: "install_postman"
       prompt: "Install Postman ? (yes/no)"
-      default: "no"
+      default: "yes"
       private: no
     - name: "install_sublime_text"
       prompt: "Install Sublime Text ? (yes/no)"
-      default: "no"
+      default: "yes"
+      private: no
+    - name: "install_discord"
+      prompt: "Install Discord ? (yes/no)"
+      default: "yes"
       private: no

@@ -1,0 +1,6 @@
+- name: Installing Discord
+  when: install_discord | bool
+  become: true
+  snap:
+    name: discord
+    classic: yes

@@ -1,6 +1,13 @@
+- name: Install .deb MySQL Repository
+  when: install_mysql_workbench | bool
+  become: true
+  apt:
+    deb: '{{ role_path }}/files/mysql-apt-config_0.8.15-1_all.deb'
+    update_cache: yes
+
 - name: Installing MySQL Workbench
   when: install_mysql_workbench | bool
   become: true
   apt:
     pkg:
-      - mysql-workbench 
+      - mysql-workbench-community

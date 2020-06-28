@@ -1,6 +1,6 @@
 # Bienvenue chez Adimeo !
 
-Le process d'installation de ta nouvelle machine pose comme prérequis l'installation d'une distribution Linux Ubuntu LTS (18.04 actuellement).
+Le process d'installation de ta nouvelle machine pose comme prérequis l'installation d'une distribution Linux Ubuntu LTS (18.04 ou 20.04).
 
 ## Mise à jour
 
@@ -24,7 +24,7 @@ Afin d'installer les outils et logiciels nécessaires au démarrage du développ
 ```
 sudo apt update
 sudo apt install software-properties-common
-sudo apt-add-repository --yes --update ppa:ansible/ansible
+sudo apt-add-repository --yes --update ppa:ansible/ansible # only on Ubuntu <= 18.04
 sudo apt install -y ansible ssh sshpass
 ```
 
@@ -54,11 +54,12 @@ Tu peux exécuter les tâches :
 ```
 ansible-playbook \
   -i hosts playbook.yml \
-  --extra-vars "ansible_user=__USER__ ansible_password=__PASSWORD__ email_username=__EMAIL_USERNAME_ ansible_become_password=__PASSWORD__"
+  --extra-vars "lsb_release=__RELEASE__ ansible_user=__USER__ ansible_password=__PASSWORD__ email_username=__EMAIL_USERNAME_ ansible_become_password=__PASSWORD__"
 ```
 
 Pense à remplacer dans cette commande les valeurs suivantes :
 
+* `__RELEASE__` : ta release Ubuntu (focal pour 20.04, bionic pour 18.04) ;
 * `__USER__` : ton nom d'utilisateur ;
 * `__PASSWORD__` : ton mot de passe.
 * `__EMAIL_USERNAME_` : ton nom d'utilisateur en rapport avec ton email. Exemple, si ton email est `jdoe@adimeo.com`, la valeur de `__EMAIL_USERNAME_` devra être `jdoe`
