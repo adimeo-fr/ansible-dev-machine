@@ -9,5 +9,6 @@
   when: install_mysql_workbench | bool
   become: true
   apt:
+    update_cache: yes
     pkg:
       - mysql-workbench-community
