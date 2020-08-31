@@ -2,6 +2,7 @@
     repo: ppa:ondrej/php
     state: present
     filename: php
+    mode: 0666
   become: true
 
 - name: Install PHP 7.0 and some extensions

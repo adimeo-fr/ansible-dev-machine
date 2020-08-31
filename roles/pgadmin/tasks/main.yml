@@ -11,6 +11,7 @@
   apt_repository:
     repo: 'deb https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/{{ lsb_release }} pgadmin4 main'
     state: present
+    mode: 0666
 
 - name: Update apt and install pgAdmin 4
   when: install_pgadmin4 | bool

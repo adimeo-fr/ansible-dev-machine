@@ -25,11 +25,13 @@
   template:
     src: ../templates/vimrc
     dest: /home/{{ ansible_user }}/.vimrc
+    mode: 0666
 
 - name: Copy Screen Run Command file (.screenrc)
   template:
     src: ../templates/screenrc
     dest: /home/{{ ansible_user }}/.screenrc
+    mode: 0666
 
 - name: Installing JetBrains PhpStorm
   become: true

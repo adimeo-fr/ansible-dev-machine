@@ -22,6 +22,7 @@
   template:
     src: ../templates/zshrc
     dest: '~/.zshrc'
+    mode: 0666
 
 - name: Set default shell to ZSH
   when: install_and_configure_zsh | bool
